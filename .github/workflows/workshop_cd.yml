@@ -43,7 +43,7 @@ jobs:
         uses: ./.github/actions/aml-endpoint-deploy
         with:
           resourceGroup: mlops #setup replace azureml with the name of your resource group in Azure
-          workspaceName: centralus #setup replace ws01ent with the name of your workspace in Azure
+          workspaceName: mlopsv1aml #setup replace ws01ent with the name of your workspace in Azure
           endpointFile: src/workshop/core/scoring/endpoint.yml
           deploymentFile: src/workshop/core/scoring/deployment.yml
           modelVersion: latest
@@ -52,7 +52,7 @@ jobs:
         uses: ./.github/actions/aml-endpoint-test
         with:
           resourceGroup: mlops #setup replace azureml with the name of your resource group in Azure
-          workspaceName: centralus #setup replace ws01ent with the name of your workspace in Azure
+          workspaceName: mlopsv1aml #setup replace ws01ent with the name of your workspace in Azure
           endpointFile: src/workshop/core/scoring/endpoint.yml
           requestFile: src/workshop/core/scoring/scoring_test_request.json
   
@@ -60,5 +60,5 @@ jobs:
         uses: ./.github/actions/aml-endpoint-swap
         with:
           resourceGroup: mlops #setup replace azureml with the name of your resource group in Azure
-          workspaceName: centralus #setup replace ws01ent with the name of your workspace in Azure
+          workspaceName: mlopsv1aml #setup replace ws01ent with the name of your workspace in Azure
           endpointFile: src/workshop/core/scoring/endpoint.yml
